@@ -45,7 +45,7 @@ class MemberController extends Controller
      */
     public function show($id)
     {
-        //
+        return $id;
     }
 
     /**
