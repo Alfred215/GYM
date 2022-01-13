@@ -56,7 +56,7 @@ class MemberController extends Controller
      */
     public function edit($id)
     {
-        //
+        return "El número de edit es: $id";
     }
 
     /**
