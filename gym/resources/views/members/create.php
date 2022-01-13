@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <h1>Creación de un socio</h1>
 
-            <form action="/create" method="post">
+            <form action="/store" method="post">
                 @csrf
                 <div>
                     <label for="dni">DNI</label>

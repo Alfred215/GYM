@@ -6,36 +6,41 @@
         <div class="col-md-8">
 
 
-        <h1>Lista de actividades
-            <a href="/activities/create" class="btn btn-primary float-right">
-                Nuevo
-            </a>
-        </h1>
-
-
+        <h1>Lista de socios</h1><br>
+        <a href="/members/create" class="btn btn-primary float-right">Nuevo</a>
+        <br>
+        <br>
         <table class="table table-striped">
         <tr>
+            <th>Dni</th>
             <th>Nombre</th>
-            <th>Días</th>
-            <th>Número de sesiones</th>
-            <th>Horario</th>
-            <th>Duración</th>
-            <th>Número maximo de participantes</th>
+            <th>Peso</th>
+            <th>Altura</th>
+            <th>Fecha de nacimiento</th>
+            <th>Sexo</th>
         </tr>
-        @forelse ($activities as $activity)
+        @forelse ($members as $member)
         <tr>
-            <td>{{$activity->name}} </td>
-            <td>{{$activity->days}} </td>
-            <td>{{$activity->numsession}} </td>
-            <td>{{$activity->schedule}} </td>
-            <td>{{$activity->duration}} </td>
-            <td>{{$activity->nummembers}} </td>
-            <td> <a class="btn btn-primary btn-sm" href="/activities/{{$activity->id}}">Ver</a></td>
-            <td> <a class="btn btn-primary btn-sm" href="/activities/{{$activity->id}}/edit">Editar</a></td>
+            <td>{{$member->dni}} </td>
+            <td>{{$member->name}} </td>
+            <td>{{$member->weight}} </td>
+            <td>{{$member->height}} </td>
+            <td>{{$member->date}} </td>
+            <td>{{$member->sex}} </td>
+            <td> <a class="btn btn-primary btn-sm" href="/members/{{$member->id}}">Ver</a></td>
+            <td> <a class="btn btn-primary btn-sm" href="/members/{{$member->id}}/edit">Editar</a></td>
         </tr>
         @empty
         <tr>
-            <td colspan="3">No hay actividades registradas</td>
+            <td colspan="3">No hay socios registrados</td>
         </tr>
         @endforelse
         </table>
+        </div>
+    </div>
+</div>
+@endsection
+
+
+
+

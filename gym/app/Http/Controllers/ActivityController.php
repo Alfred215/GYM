@@ -13,7 +13,7 @@ class ActivityController extends Controller
      */
     public function index()
     {
-        return "Estamos en ActivityController";
+        return view('activities.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class ActivityController extends Controller
      */
     public function create()
     {
-        //
+        return view('activities.create');
     }
 
     /**
@@ -34,7 +34,7 @@ class ActivityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('activities.index');
     }
 
     /**
