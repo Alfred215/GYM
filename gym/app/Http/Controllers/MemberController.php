@@ -59,9 +59,9 @@ class MemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Member $member)
     {
-        return "El número de edit es: $id";
+        return view('members.edit',['member' => $member]);
     }
 
     /**
@@ -73,7 +73,9 @@ class MemberController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $members = Member::all();
+
+        return view('members.index', ['members' => $members]);
     }
 
     /**

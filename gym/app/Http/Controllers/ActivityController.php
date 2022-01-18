@@ -61,7 +61,7 @@ class ActivityController extends Controller
      */
     public function edit(Activity $activity)
     {
-        //
+        return view('activities.edit', ['activity' => $activity]);
     }
 
     /**
@@ -73,7 +73,9 @@ class ActivityController extends Controller
      */
     public function update(Request $request, Activity $activity)
     {
-        //
+        $activities = Activity::all();
+
+        return view('activities.index', ['activities' => $activities]);
     }
 
     /**

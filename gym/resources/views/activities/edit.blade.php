@@ -8,37 +8,37 @@
 </head>
 
 <body>
-    <h1>Crear una actividad</h1><br>
+    <h1>Editar una actividad</h1><br>
     <form action="/activities" method="post">
         @csrf
         <div>
             <label for="name">NOMBRE</label>
-            <input type="text" name="name">
+            <input type="text" name="name" value="{{$activity->name}}">
         </div>
 
         <div>
             <label for="days">DIA</label>
-            <input type="text" name="days">
+            <input type="text" name="days" value="{{$activity->days}}">
         </div>
 
         <div>
             <label for="numsession">NUMERO DE SESIONES SEMANALES</label>
-            <input type="text" name="numsession">
+            <input type="text" name="numsession" value="{{$activity->numsession}}">
         </div>
 
         <div>
             <label for="schedule">HORARIO</label>
-            <input type="text" name="schedule">
+            <input type="text" name="schedule" value="{{$activity->schedule}}">
         </div>
 
         <div>
             <label for="duration">DURACION</label>
-            <input type="text" name="duration">
+            <input type="text" name="duration" value="{{$activity->duration}}">
         </div>
 
         <div>
             <label for="nummembers">NUMERO MAX MIEMBROS</label>
-            <input type="text" name="nummembers">
+            <input type="text" name="nummembers" value="{{$activity->nummembers}}"> 
         </div>
 
         <div>
