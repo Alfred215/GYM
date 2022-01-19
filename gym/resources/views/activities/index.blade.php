@@ -1,16 +1,20 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
+<body>
 
-        <h1>Lista de actividades</h1><br>
-        <a href="/activities/create" class="btn btn-primary float-right">Nuevo</a>
-        <br>
-        <br>
-        <table class="table table-striped">
+    <h1>Actividades</h1>
+    <a href="activities/create" class="btn btn-primary float-right">Nuevo</a>
+    <br>
+    <br>
+
+    <table border="1">
         <tr>
             <th>Nombre</th>
             <th>Días</th>
@@ -32,7 +36,11 @@
         </tr>
         @empty
         <tr>
-            <td colspan="3">No hay actividades registradas</td>
+            <td colspan="3">No hay estudios registrados</td>
         </tr>
         @endforelse
-        </table>
+    </table>
+
+</body>
+
+</html>
