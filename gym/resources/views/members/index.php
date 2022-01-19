@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
 
-<body>
 
-    <h1>Miembros</h1>
-    <a href="/members/create" class="btn btn-primary float-right">Nuevo</a>
-    <br>
-    <br>
-
-    <table border="1">
+        <h1>Lista de socios</h1><br>
+        <a href="/members/create" class="btn btn-primary float-right">Nuevo</a>
+        <br>
+        <br>
+        <table class="table table-striped">
         <tr>
             <th>Dni</th>
             <th>Nombre</th>
@@ -29,18 +25,22 @@
             <td>{{$member->name}} </td>
             <td>{{$member->weight}} </td>
             <td>{{$member->height}} </td>
-            <td>{{$member->birthday}} </td>
+            <td>{{$member->date}} </td>
             <td>{{$member->sex}} </td>
             <td> <a class="btn btn-primary btn-sm" href="/members/{{$member->id}}">Ver</a></td>
             <td> <a class="btn btn-primary btn-sm" href="/members/{{$member->id}}/edit">Editar</a></td>
         </tr>
         @empty
         <tr>
-            <td colspan="3">No hay estudios registrados</td>
+            <td colspan="3">No hay socios registrados</td>
         </tr>
         @endforelse
-    </table>
+        </table>
+        </div>
+    </div>
+</div>
+@endsection
 
-</body>
 
-</html>
+
+

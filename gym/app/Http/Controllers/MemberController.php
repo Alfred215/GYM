@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Member;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
@@ -14,9 +13,7 @@ class MemberController extends Controller
      */
     public function index()
     {
-        $members = Member::all();
-
-        return view('members.index', ['members' => $members]);
+        return view('members.index');
     }
 
     /**
@@ -37,9 +34,7 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        $members = Member::all();
-
-        return view('members.index', ['members' => $members]);
+        return view('members.index');
     }
 
     /**
@@ -48,9 +43,9 @@ class MemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Member $member)
+    public function show($id)
     {
-        return view('members.show',['member' => $member]);
+        return $id;
     }
 
     /**
@@ -59,9 +54,9 @@ class MemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Member $member)
+    public function edit($id)
     {
-        return view('members.edit',['member' => $member]);
+        return "El número de edit es: $id";
     }
 
     /**
@@ -73,9 +68,7 @@ class MemberController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $members = Member::all();
-
-        return view('members.index', ['members' => $members]);
+        //
     }
 
     /**

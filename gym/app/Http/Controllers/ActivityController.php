@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Activity;
 use Illuminate\Http\Request;
 
 class ActivityController extends Controller
@@ -14,9 +13,7 @@ class ActivityController extends Controller
      */
     public function index()
     {
-        $activities = Activity::all();
-
-        return view('activities.index', ['activities' => $activities]);
+        return view('activities.index');
     }
 
     /**
@@ -37,54 +34,50 @@ class ActivityController extends Controller
      */
     public function store(Request $request)
     {
-        $activities = Activity::all();
-
-        return view('activities.index', ['activities' => $activities]);
+        return view('activities.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Activity  $activity
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Activity $activity)
+    public function show($id)
     {
-        return view('activities.show', ['activity' => $activity]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Activity  $activity
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Activity $activity)
+    public function edit($id)
     {
-        return view('activities.edit', ['activity' => $activity]);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Activity  $activity
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Activity $activity)
+    public function update(Request $request, $id)
     {
-        $activities = Activity::all();
-
-        return view('activities.index', ['activities' => $activities]);
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Activity  $activity
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Activity $activity)
+    public function destroy($id)
     {
         //
     }
