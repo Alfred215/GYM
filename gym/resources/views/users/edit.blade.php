@@ -8,20 +8,26 @@
 </head>
 
 <body>
-    <h1>Editar un miembro</h1><br>
+    <h1>Editar un usuario</h1><br>
     <form action="/members" method="post">
         @csrf
         <input type="hidden" name="_method" value="PUT">
         <div>
-            <label for="dni">DNI</label>
-            <input type="text" name="dni" value="{{$user->dni}}">
-        </div>
-
-        <div>
             <label for="name">NOMBRE COMPLETO</label>
             <input type="text" name="name" value="{{$user->name}}">
         </div>
-
+        <div>
+            <label for="dni">DNI</label>
+            <input type="text" name="dni" value="{{$user->dni}}">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="text" name="email" value="{{$user->email}}">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="text" name="email" value="{{$user->password}}">
+        </div>
         <div>
             <label for="weight">PESO</label>
             <input type="text" name="weight" value="{{$user->weight}}">

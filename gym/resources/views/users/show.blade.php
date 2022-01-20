@@ -8,17 +8,21 @@
 </head>
 
 <body>
-    <h1>Miembro</h1>
+    <h1>Usuario</h1>
 
 
     <ul>
+        <li>
+            <strong>Nombre</strong>
+            {{ $user->name }}
+        </li>
         <li>
             <strong>DNI</strong>
             {{ $user->dni }}
         </li>
         <li>
-            <strong>Nombre</strong>
-            {{ $user->name }}
+            <strong>Email</strong>
+            {{ $user->email }}
         </li>
         <li>
             <strong>Peso</strong>

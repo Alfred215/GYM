@@ -9,15 +9,16 @@
 
 <body>
 
-    <h1>Miembros</h1>
+    <h1>Usuarios</h1>
     <a href="/users/create" class="btn btn-primary float-right">Nuevo</a>
     <br>
     <br>
 
     <table border="1">
         <tr>
-            <th>Dni</th>
             <th>Nombre</th>
+            <th>Dni</th>
+            <th>Email</th>
             <th>Peso</th>
             <th>Altura</th>
             <th>Fecha de nacimiento</th>
@@ -25,8 +26,9 @@
         </tr>
         @forelse ($users as $user)
         <tr>
-            <td>{{$user->dni}} </td>
             <td>{{$user->name}} </td>
+            <td>{{$user->dni}} </td>
+            <td>{{$user->email}}</td>
             <td>{{$user->weight}} </td>
             <td>{{$user->height}} </td>
             <td>{{$user->birthday}} </td>

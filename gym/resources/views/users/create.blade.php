@@ -12,15 +12,17 @@
     <form action="/members/" method="post">
         @csrf
         <div>
-            <label for="dni">DNI</label>
-            <input type="text" name="dni">
-        </div>
-
-        <div>
             <label for="name">NOMBRE COMPLETO</label>
             <input type="text" name="name">
         </div>
-
+        <div>
+            <label for="dni">DNI</label>
+            <input type="text" name="dni">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="text" name="email">
+        </div>
         <div>
             <label for="weight">PESO</label>
             <input type="text" name="weight">

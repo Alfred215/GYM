@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\MemberController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ActivityController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('members', MemberController::class);
+Route::resource('users', UserController::class);
 Route::resource('activities', ActivityController::class);
 
 Auth::routes();
