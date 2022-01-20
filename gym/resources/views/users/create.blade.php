@@ -24,6 +24,10 @@
             <input type="text" name="email">
         </div>
         <div>
+            <label for="password">Contraseña</label>
+            <input type="text" name="password">
+        </div>
+        <div>
             <label for="weight">PESO</label>
             <input type="text" name="weight">
         </div>
