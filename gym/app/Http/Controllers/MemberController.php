@@ -37,9 +37,8 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        $members = Member::all();
-
-        return view('members.index', ['members' => $members]);
+        $member = Member::create($request->all());
+        return redirect('/members');
     }
 
     /**

@@ -37,9 +37,8 @@ class ActivityController extends Controller
      */
     public function store(Request $request)
     {
-        $activities = Activity::all();
-
-        return view('activities.index', ['activities' => $activities]);
+        $activity = Activity::create($request->all());
+        return redirect('/activities');
     }
 
     /**
