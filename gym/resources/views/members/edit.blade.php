@@ -42,7 +42,7 @@
         </div>
 
         <div>
-            <input type="submit" value="crear">
+            <input type="submit" value="Editar">
         </div>
     </form>
 </body>
