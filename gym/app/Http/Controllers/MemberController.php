@@ -74,7 +74,6 @@ class MemberController extends Controller
     {
 
         $member->fill($request->all());
-
         $member->save();
         return redirect('/members');
     }
