@@ -70,11 +70,13 @@ class MemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Member $member)
     {
-        $members = Member::all();
 
-        return view('members.index', ['members' => $members]);
+        $member->fill($request->all());
+
+        $member->save();
+        return redirect('/members');
     }
 
     /**

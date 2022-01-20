@@ -11,6 +11,7 @@
     <h1>Editar un miembro</h1><br>
     <form action="/members" method="post">
         @csrf
+        <input type="hidden" name="_method" value="PUT">
         <div>
             <label for="dni">DNI</label>
             <input type="text" name="dni" value="{{$member->dni}}">
