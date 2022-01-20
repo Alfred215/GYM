@@ -10,7 +10,7 @@
 <body>
 
     <h1>Miembros</h1>
-    <a href="/members/create" class="btn btn-primary float-right">Nuevo</a>
+    <a href="/users/create" class="btn btn-primary float-right">Nuevo</a>
     <br>
     <br>
 
@@ -23,16 +23,16 @@
             <th>Fecha de nacimiento</th>
             <th>Sexo</th>
         </tr>
-        @forelse ($members as $member)
+        @forelse ($users as $user)
         <tr>
-            <td>{{$member->dni}} </td>
-            <td>{{$member->name}} </td>
-            <td>{{$member->weight}} </td>
-            <td>{{$member->height}} </td>
-            <td>{{$member->birthday}} </td>
-            <td>{{$member->sex}} </td>
-            <td> <a class="btn btn-primary btn-sm" href="/members/{{$member->id}}">Ver</a></td>
-            <td> <a class="btn btn-primary btn-sm" href="/members/{{$member->id}}/edit">Editar</a></td>
+            <td>{{$user->dni}} </td>
+            <td>{{$user->name}} </td>
+            <td>{{$user->weight}} </td>
+            <td>{{$user->height}} </td>
+            <td>{{$user->birthday}} </td>
+            <td>{{$user->sex}} </td>
+            <td> <a class="btn btn-primary btn-sm" href="/users/{{$user->id}}">Ver</a></td>
+            <td> <a class="btn btn-primary btn-sm" href="/users/{{$user->id}}/edit">Editar</a></td>
         </tr>
         @empty
         <tr>

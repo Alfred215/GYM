@@ -14,27 +14,27 @@
     <ul>
         <li>
             <strong>DNI</strong>
-            {{ $member->dni }}
+            {{ $user->dni }}
         </li>
         <li>
             <strong>Nombre</strong>
-            {{ $member->name }}
+            {{ $user->name }}
         </li>
         <li>
             <strong>Peso</strong>
-            {{ $member->weight }}
+            {{ $user->weight }}
         </li>
         <li>
             <strong>Altura</strong>
-            {{ $member->height }}
+            {{ $user->height }}
         </li>
         <li>
             <strong>Fecha de Nacimiento</strong>
-            {{ $member->birthday }}
+            {{ $user->birthday }}
         </li>
         <li>
             <strong>Sexo</strong>
-            {{ $member->sex }}
+            {{ $user->sex }}
         </li>
     </ul>
 </body>

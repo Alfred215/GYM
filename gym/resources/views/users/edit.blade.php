@@ -14,32 +14,32 @@
         <input type="hidden" name="_method" value="PUT">
         <div>
             <label for="dni">DNI</label>
-            <input type="text" name="dni" value="{{$member->dni}}">
+            <input type="text" name="dni" value="{{$user->dni}}">
         </div>
 
         <div>
             <label for="name">NOMBRE COMPLETO</label>
-            <input type="text" name="name" value="{{$member->name}}">
+            <input type="text" name="name" value="{{$user->name}}">
         </div>
 
         <div>
             <label for="weight">PESO</label>
-            <input type="text" name="weight" value="{{$member->weight}}">
+            <input type="text" name="weight" value="{{$user->weight}}">
         </div>
 
         <div>
             <label for="height">ALTURA</label>
-            <input type="text" name="height" value="{{$member->height}}">
+            <input type="text" name="height" value="{{$user->height}}">
         </div>
 
         <div>
             <label for="birthday">FECHA NACIMIENTO</label>
-            <input type="text" name="birthday" value="{{$member->birthday}}">
+            <input type="text" name="birthday" value="{{$user->birthday}}">
         </div>
 
         <div>
             <label for="sex">SEXO</label>
-            <input type="text" name="sex" value="{{$member->sex}}">
+            <input type="text" name="sex" value="{{$user->sex}}">
         </div>
 
         <div>
