@@ -15,16 +15,8 @@
             {{ $activity->name }}
         </li>
         <li>
-            <strong>Dias</strong>
-            {{ $activity->days }}
-        </li>
-        <li>
-            <strong>Número de sesiones</strong>
-            {{ $activity->numsession }}
-        </li>
-        <li>
-            <strong>Horario</strong>
-            {{ $activity->schedule }}
+            <strong>Descripción</strong>
+            {{ $activity->descrip }}
         </li>
         <li>
             <strong>Duración</strong>

@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Activity;
-use App\Models\Session;
 use Illuminate\Http\Request;
 
-class ActivityController extends Controller
+class SessionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +13,7 @@ class ActivityController extends Controller
      */
     public function index()
     {
-        $activities = Activity::all();
-
-        return view('activities.index', ['activities' => $activities]);
+        //
     }
 
     /**
@@ -27,7 +23,7 @@ class ActivityController extends Controller
      */
     public function create()
     {
-        return view('activities.create');
+        //
     }
 
     /**
@@ -38,53 +34,50 @@ class ActivityController extends Controller
      */
     public function store(Request $request)
     {
-        $activity = Activity::create($request->all());
-        return redirect('/activities');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Activity  $activity
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Activity $activity)
+    public function show($id)
     {
-        return view('activities.show', ['activity' => $activity]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Activity  $activity
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Activity $activity)
+    public function edit($id)
     {
-        return view('activities.edit', ['activity' => $activity]);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Activity  $activity
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Activity $activity)
+    public function update(Request $request, $id)
     {
-        $activity->fill($request->all());
-        $activity->save();
-        return redirect('/activities');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Activity  $activity
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Activity $activity)
+    public function destroy($id)
     {
         //
     }

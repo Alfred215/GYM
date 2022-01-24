@@ -17,10 +17,8 @@ class ActivitySeeder extends Seeder
     {
         Activity::create([
             'name' => 'Yoga',
-            'days' => '2',
-            'numsession' => '4',
-            'schedule' => '10:00',
-            'duration' => '2 horas',
+            'descrip' => 'relax',
+            'duration' => '120m',
             'nummembers' => '17'
         ]);
     }

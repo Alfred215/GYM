@@ -17,18 +17,14 @@
     <table border="1">
         <tr>
             <th>Nombre</th>
-            <th>Días</th>
-            <th>Número de sesiones</th>
-            <th>Horario</th>
-            <th>Duración</th>
+            <th>Descripción</th>
+            <th>Duracción en minutos</th>
             <th>Número maximo de participantes</th>
         </tr>
         @forelse ($activities as $activity)
         <tr>
             <td>{{$activity->name}} </td>
-            <td>{{$activity->days}} </td>
-            <td>{{$activity->numsession}} </td>
-            <td>{{$activity->schedule}} </td>
+            <td>{{$activity->descrip}} </td>
             <td>{{$activity->duration}} </td>
             <td>{{$activity->nummembers}} </td>
             <td> <a class="btn btn-primary btn-sm" href="/activities/{{$activity->id}}">Ver</a></td>

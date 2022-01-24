@@ -17,18 +17,8 @@
         </div>
 
         <div>
-            <label for="days">DIA</label>
-            <input type="text" name="days" value="{{$activity->days}}">
-        </div>
-
-        <div>
-            <label for="numsession">NUMERO DE SESIONES SEMANALES</label>
-            <input type="text" name="numsession" value="{{$activity->numsession}}">
-        </div>
-
-        <div>
-            <label for="schedule">HORARIO</label>
-            <input type="text" name="schedule" value="{{$activity->schedule}}">
+            <label for="descrip">Descripción</label>
+            <input type="text" name="descrip">
         </div>
 
         <div>

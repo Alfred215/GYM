@@ -5,15 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Activity extends Model
+class Session extends Model
 {
     use HasFactory;
 
     protected $fillable=[
-        'name',
-        'descrip',
-        'duration',
-        'nummembers'
+        'id_activity',
+        'date_session',
+        'start_time',
+        'end_time'
     ];
-
 }

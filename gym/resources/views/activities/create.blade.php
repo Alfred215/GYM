@@ -17,20 +17,9 @@
         </div>
 
         <div>
-            <label for="days">DIA</label>
-            <input type="text" name="days">
+            <label for="descrip">Descripción</label>
+            <input type="text" name="descrip">
         </div>
-
-        <div>
-            <label for="numsession">NUMERO DE SESIONES SEMANALES</label>
-            <input type="text" name="numsession">
-        </div>
-
-        <div>
-            <label for="schedule">HORARIO</label>
-            <input type="text" name="schedule">
-        </div>
-
         <div>
             <label for="duration">DURACION</label>
             <input type="text" name="duration">
