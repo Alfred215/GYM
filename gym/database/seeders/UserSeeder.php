@@ -19,7 +19,6 @@ class UserSeeder extends Seeder
             'name' => 'Jorge Campos Lopez',
             'dni' => '12345678A',
             'email' => 'alfredo@gmail.com',
-            'email_verified_at'=>now(),
             'password' => '123456789',
             'weight' => '79',
             'height' => '1,85',
