@@ -9,7 +9,7 @@
 
 <body>
     <h1>Editar un usuario</h1><br>
-    <form action="/members" method="post">
+    <form action="/users" method="post">
         @csrf
         <input type="hidden" name="_method" value="PUT">
         <div>

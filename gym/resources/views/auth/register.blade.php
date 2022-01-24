@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
-                
+
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -62,6 +62,25 @@
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
+                        </div>
+                        <div>
+                            <label for="weight">PESO</label><br>
+                            <input type="text" name="weight">
+                        </div>
+
+                        <div>
+                            <label for="height">ALTURA</label><br>
+                            <input type="text" name="height">
+                        </div>
+
+                        <div>
+                            <label for="birthday">FECHA NACIMIENTO</label><br>
+                            <input type="text" name="birthday">
+                        </div>
+
+                        <div>
+                            <label for="sex">SEXO</label><br>
+                            <input type="text" name="sex">
                         </div>
 
                         <div class="row mb-0">
