@@ -9,7 +9,7 @@
 
 <body>
     <h1>Editar una actividad</h1><br>
-    <form action="/activities" method="post">
+    <form action="/activities" method="PUT">
         @csrf
         <div>
             <label for="name">NOMBRE</label>
@@ -18,7 +18,7 @@
 
         <div>
             <label for="descrip">Descripción</label>
-            <input type="text" name="descrip">
+            <input type="text" name="descrip" value="{{$activity->descrip}}">
         </div>
 
         <div>

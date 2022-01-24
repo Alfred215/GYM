@@ -73,8 +73,10 @@ class ActivityController extends Controller
      */
     public function update(Request $request, Activity $activity)
     {
-        $activity->fill($request->all());
-        $activity->save();
+        //No funciona
+        $activities = Activity::find($activity->id);
+        //$activity->fill($request->all());
+        $activities->save();
         return redirect('/activities');
     }
 
