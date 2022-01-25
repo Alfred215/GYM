@@ -14,7 +14,9 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        $roles = Role::all();
+
+        return view('roles.index', ['roles' => $roles]);
     }
 
     /**
@@ -24,7 +26,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        return view('roles.create');
     }
 
     /**
@@ -46,7 +48,7 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        //
+        return view('roles.show',['role' => $role]);
     }
 
     /**

@@ -23,6 +23,7 @@
             <th>Altura</th>
             <th>Fecha de nacimiento</th>
             <th>Sexo</th>
+            <th>Rol</th>
         </tr>
         @forelse ($users as $user)
         <tr>
@@ -33,6 +34,7 @@
             <td>{{$user->height}} </td>
             <td>{{$user->birthday}} </td>
             <td>{{$user->sex}} </td>
+            <td>{{$user->role->name}} </td>
             <td> <a class="btn btn-primary btn-sm" href="/users/{{$user->id}}">Ver</a></td>
             <td> <a class="btn btn-primary btn-sm" href="/users/{{$user->id}}/edit">Editar</a></td>
         </tr>
