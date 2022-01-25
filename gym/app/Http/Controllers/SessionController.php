@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class SessionController extends Controller
 {
@@ -34,7 +35,22 @@ class SessionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dias = $request['dias'];
+        for($i=0;$i<Str::length($dias);$i++){
+            switch($dias[$i]){
+                case 'L':
+
+                break;
+                case 'M':
+                break;
+                case 'X':
+                break;
+                case 'J':
+                break;
+                case 'V':
+                break;
+            }
+        }
     }
 
     /**
