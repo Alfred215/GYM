@@ -78,7 +78,7 @@
         </div>
         <div>
             <label for="password">Contraseña</label><br>
-            <input type="text" name="password">
+            <input type="password" name="password">
         </div>
         <div>
             <label for="weight">PESO</label><br>

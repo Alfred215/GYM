@@ -16,4 +16,7 @@ class Activity extends Model
         'nummembers'
     ];
 
+    public function sessions(){
+        return $this->hasMany(Session::class);
+    }
 }

@@ -27,5 +27,16 @@
             {{ $activity->nummembers }}
         </li>
     </ul>
+
+    <h1>Sessiones</h1>
+    
+    @foreach($activity->sessions as $session)
+    <ul>
+        <li>{{$session->date_session}}</li>
+        <li>{{$session->start_time}}</li>
+        <li>{{$session->end_time}}</li>
+    </ul>    
+    @endforeach
+    
 </body>
 </html>

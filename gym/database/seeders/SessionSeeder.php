@@ -16,8 +16,7 @@ class SessionSeeder extends Seeder
     public function run()
     {
         Session::create([
-            'id_activity' => '1',
-            'date_session' => 'LWF',
+            'date_session' => '30/01',
             'start_time' => '17:00',
             'end_time' => '19:00',
         ]);

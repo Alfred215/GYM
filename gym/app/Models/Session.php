@@ -10,9 +10,14 @@ class Session extends Model
     use HasFactory;
 
     protected $fillable=[
-        'id_activity',
         'date_session',
         'start_time',
         'end_time'
     ];
+
+    protected $date =['date'];
+
+    public function activity(){
+        return $this->belongsTo(Activity::class);
+    }
 }

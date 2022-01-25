@@ -46,7 +46,8 @@ class UserController extends Controller
         'weight' => $request['weight'],
         'height' => $request['height'],
         'birthday' => $request['birthday'],
-        'sex' => $request['sex']]);
+        'sex' => $request['sex'],
+        'role_id' =>1]);
         return redirect('/users');
     }
 
