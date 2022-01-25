@@ -39,7 +39,8 @@ class ActivityController extends Controller
     public function store(Request $request)
     {
         $activity = Activity::create($request->all());
-        return redirect('/activities');
+
+        return view('sessions.create', ['activity' => $activity->id]);
     }
 
     /**
@@ -89,5 +90,8 @@ class ActivityController extends Controller
     public function destroy(Activity $activity)
     {
         //
+        // DB::lastInsertId;
+        // $object  = Object::create($request->all());
+        // $object->id;
     }
 }

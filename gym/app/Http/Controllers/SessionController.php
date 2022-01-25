@@ -13,7 +13,7 @@ class SessionController extends Controller
      */
     public function index()
     {
-        //
+        return view('sessions.create');
     }
 
     /**
@@ -23,7 +23,7 @@ class SessionController extends Controller
      */
     public function create()
     {
-        //
+        return view('sessions.create');
     }
 
     /**
