@@ -47,7 +47,10 @@
             <label for="sex">SEXO</label>
             <input type="text" name="sex" value="{{$user->sex}}">
         </div>
-
+        <div>
+            <label for="rol">Role_id</label>
+            <input type="text" name="role_id" value="{{$user->role->id}}">
+        </div>
         <div>
             <input type="submit" value="Editar">
         </div>

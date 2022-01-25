@@ -20,7 +20,8 @@ class User extends Authenticatable
         'weight',
         'height',
         'birthday',
-        'sex'
+        'sex',
+        'role_id'
     ];
 
     public function role(){

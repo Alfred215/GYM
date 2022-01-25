@@ -40,6 +40,10 @@
             <strong>Sexo</strong>
             {{ $user->sex }}
         </li>
+        <li>
+            <strong>Rol</strong>
+            {{ $user->role->name }}
+        </li>
     </ul>
 </body>
 
