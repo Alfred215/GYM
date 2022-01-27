@@ -49,65 +49,66 @@ class SesionController extends Controller
         $date= Carbon::createFromDate(2022,$mes,01,'Europe/Madrid');
 
         for ($j = 0; $j < $date->daysInMonth; $j++) {
-            echo $date->daysInMonth;
-            $modifiDate=$date->add($j,'day');
-            for ($i = 0; $i < Str::length($dias); $i++) {
-                switch ($dias[$i]) {
-                    case 'L':
-                        if($modifiDate->isMonday()){
-                            $sesion= Sesion::create([
-                                'date_session'=>$modifiDate,
-                                'start_time'=>$request['start_time'],
-                                'end_time'=>$request['end_time'],
-                                'activity_id'=>$request['activity_id']
-                            ]);
-                        }
-                        break;
-                    case 'M':
-                        if($modifiDate->isTuesday()){
-                            $sesion= Sesion::create([
-                                'date_session'=>$modifiDate,
-                                'start_time'=>$request['start_time'],
-                                'end_time'=>$request['end_time'],
-                                'activity_id'=>$request['activity_id']
-                            ]);
-                        }
-                        break;
-                    case 'X':
-                        if($modifiDate->isWednesday()){
-                            $sesion= Sesion::create([
-                                'date_session'=>$modifiDate,
-                                'start_time'=>$request['start_time'],
-                                'end_time'=>$request['end_time'],
-                                'activity_id'=>$request['activity_id']
-                            ]);
-                        }
-                        break;
-                    case 'J':
-                        if($modifiDate->isThursday()){
-                            $sesion= Sesion::create([
-                                'date_session'=>$modifiDate,
-                                'start_time'=>$request['start_time'],
-                                'end_time'=>$request['end_time'],
-                                'activity_id'=>$request['activity_id']
-                            ]);
-                        }
-                        break;
-                    case 'V':
-                        if($modifiDate->isFriday()){
-                            $sesion= Sesion::create([
-                                'date_session'=>$modifiDate,
-                                'start_time'=>$request['start_time'],
-                                'end_time'=>$request['end_time'],
-                                'activity_id'=>$request['activity_id']
-                            ]);
-                        }
-                        break;
-                }
+            $date=$date->add($j,'day');
+            if($date->isSameMonth($date)){
+                for ($i = 0; $i < Str::length($dias); $i++) {
+                    switch ($dias[$i]) {
+                        case 'L':
+                            if($date->isMonday()){
+                                $sesion= Sesion::create([
+                                    'date_session'=>$date,
+                                    'start_time'=>$request['start_time'],
+                                    'end_time'=>$request['end_time'],
+                                    'activity_id'=>$request['activity_id']
+                                ]);
+                            }
+                            break;
+                        case 'M':
+                            if($date->isTuesday()){
+                                $sesion= Sesion::create([
+                                    'date_session'=>$date,
+                                    'start_time'=>$request['start_time'],
+                                    'end_time'=>$request['end_time'],
+                                    'activity_id'=>$request['activity_id']
+                                ]);
+                            }
+                            break;
+                        case 'X':
+                            if($date->isWednesday()){
+                                $sesion= Sesion::create([
+                                    'date_session'=>$date,
+                                    'start_time'=>$request['start_time'],
+                                    'end_time'=>$request['end_time'],
+                                    'activity_id'=>$request['activity_id']
+                                ]);
+                            }
+                            break;
+                        case 'J':
+                            if($date->isThursday()){
+                                $sesion= Sesion::create([
+                                    'date_session'=>$date,
+                                    'start_time'=>$request['start_time'],
+                                    'end_time'=>$request['end_time'],
+                                    'activity_id'=>$request['activity_id']
+                                ]);
+                            }
+                            break;
+                        case 'V':
+                            if($date->isFriday()){
+                                $sesion= Sesion::create([
+                                    'date_session'=>$date,
+                                    'start_time'=>$request['start_time'],
+                                    'end_time'=>$request['end_time'],
+                                    'activity_id'=>$request['activity_id']
+                                ]);
+                            }
+                            break;
+                    }
+                } 
             }
         }
 
-        return view('sessions.index');
+        return redirect('/sessions');
     }
     
 
