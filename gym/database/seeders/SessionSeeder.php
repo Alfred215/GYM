@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Session;
+use App\Models\Sesion;
 use DB;
 
 class SessionSeeder extends Seeder
@@ -15,10 +15,11 @@ class SessionSeeder extends Seeder
      */
     public function run()
     {
-        Session::create([
+        Sesion::create([
             'date_session' => '2022-01-30',
             'start_time' => '17:00',
             'end_time' => '19:00',
+            'activity_id'=>1
         ]);
     }
 }

@@ -3,7 +3,7 @@
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ActivityController;
-use App\Http\Controllers\SessionController;
+use App\Http\Controllers\SesionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,7 +24,7 @@ Route::get('/', function () {
 Route::resource('users', UserController::class);
 Route::resource('activities', ActivityController::class);
 Route::resource('roles', RoleController::class);
-Route::resource('sessions', SessionController::class);
+Route::resource('sessions', SesionController::class);
 
 Auth::routes();
 
