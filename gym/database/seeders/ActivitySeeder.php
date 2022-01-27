@@ -17,7 +17,7 @@ class ActivitySeeder extends Seeder
     {
         Activity::create([
             'name' => 'Yoga',
-            'descrip' => 'relax',
+            'descrip' => 'Relax',
             'duration' => '120m',
             'nummembers' => '17'
         ]);
