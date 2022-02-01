@@ -17,8 +17,7 @@ class SesionController extends Controller
      */
     public function index()
     {
-        $sessions = Sesion::all();
-        return view('sessions.index',['sessions'=>$sessions]);
+
     }
 
     /**

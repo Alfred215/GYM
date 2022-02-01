@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Activity;
-use App\Models\Sesion;
 use Illuminate\Http\Request;
 
 class ActivityController extends Controller

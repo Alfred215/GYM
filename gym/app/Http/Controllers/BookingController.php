@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Booking;
+use App\Models\Activity;
+use App\Models\Sesion;
+use Carbon\Carbon;
 
 class BookingController extends Controller
 {
@@ -13,7 +17,8 @@ class BookingController extends Controller
      */
     public function index()
     {
-        //
+        $bookings = Booking::all();
+        return view("bookings.index",["bookings"=>$bookings]);
     }
 
     /**
@@ -21,9 +26,10 @@ class BookingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $activities = Activity::all();
+        return view("bookings.create",["activities"=>$activities]);
     }
 
     /**
@@ -34,7 +40,26 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $activity_id=$request["activity_id"];
+        $session_date=$request["session_id"];
+        echo $activity_id;
+        echo $session_date;
+
+        $activities=Activity::all();
+
+        foreach($activities as $activity){
+            if($activity->id==$activity_id){
+                foreach($activity->sessions as $session){
+                    if($session->date_session==$session_date){
+                        $booking= Booking::create([
+                            'fecha'=>Carbon::now(),
+                            'user_id'=>1,
+                            'session_id'=>$session->id 
+                        ]);
+                    }
+                }
+            }
+        }
     }
 
     /**

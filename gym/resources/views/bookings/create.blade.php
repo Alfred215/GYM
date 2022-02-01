@@ -8,27 +8,20 @@
 </head>
 
 <body>
-    <h1>Crear una actividad</h1><br>
-    <form action="/activities" method="post">
+    <h1>Seleccionar actividad</h1><br>
+    <form action="/bookings" method="POST">
         @csrf
-        <div>
-            <label for="name">NOMBRE</label>
-            <input type="text" name="name">
-        </div>
+        <label>Actividades: </label><select name="activity_id">
+            @foreach($activities as $activity)
+        <option value="{{ $activity->id }}">{{ $activity->name }}</option>  
+        @endforeach
+        </select>
 
-        <div>
-            <label for="descrip">Descripción</label>
-            <input type="text" name="descrip">
-        </div>
-        <div>
-            <label for="duration">DURACION</label>
-            <input type="text" name="duration">
-        </div>
-
-        <div>
-            <label for="nummembers">NUMERO MAX MIEMBROS</label>
-            <input type="text" name="nummembers">
-        </div>
+        <label>Sessiones: </label><select name="session_id">
+            @foreach($activity->sessions as $session)
+        <option value="{{ $session->date_session }}">{{ $session->date_session }}</option>
+        @endforeach
+        </select>
 
         <div>
             <input type="submit" value="Crear">
