@@ -48,59 +48,34 @@ class SesionController extends Controller
         $mes = $request['mes'];
         $date= Carbon::createFromDate(2022,$mes,01,'Europe/Madrid');
 
-        for ($j = 0; $j < $date->daysInMonth; $j++) {
-            $date=$date->add($j,'day');
-            if($date->isSameMonth($date)){
+        for ($j = 1; $j <= $date->daysInMonth; $j++) {
+            $dateModifi= Carbon::createFromDate(2022,$mes,$j,'Europe/Madrid');
+            if($dateModifi->isSameMonth($date)){
                 for ($i = 0; $i < Str::length($dias); $i++) {
                     switch ($dias[$i]) {
                         case 'L':
-                            if($date->isMonday()){
-                                $sesion= Sesion::create([
-                                    'date_session'=>$date,
-                                    'start_time'=>$request['start_time'],
-                                    'end_time'=>$request['end_time'],
-                                    'activity_id'=>$request['activity_id']
-                                ]);
+                            if($dateModifi->isMonday()){
+                                $this->up($request,$dateModifi);
                             }
                             break;
                         case 'M':
-                            if($date->isTuesday()){
-                                $sesion= Sesion::create([
-                                    'date_session'=>$date,
-                                    'start_time'=>$request['start_time'],
-                                    'end_time'=>$request['end_time'],
-                                    'activity_id'=>$request['activity_id']
-                                ]);
+                            if($dateModifi->isTuesday()){
+                                $this->up($request,$dateModifi);
                             }
                             break;
                         case 'X':
-                            if($date->isWednesday()){
-                                $sesion= Sesion::create([
-                                    'date_session'=>$date,
-                                    'start_time'=>$request['start_time'],
-                                    'end_time'=>$request['end_time'],
-                                    'activity_id'=>$request['activity_id']
-                                ]);
+                            if($dateModifi->isWednesday()){
+                                $this->up($request,$dateModifi);
                             }
                             break;
                         case 'J':
-                            if($date->isThursday()){
-                                $sesion= Sesion::create([
-                                    'date_session'=>$date,
-                                    'start_time'=>$request['start_time'],
-                                    'end_time'=>$request['end_time'],
-                                    'activity_id'=>$request['activity_id']
-                                ]);
+                            if($dateModifi->isThursday()){
+                                $this->up($request,$dateModifi);
                             }
                             break;
                         case 'V':
-                            if($date->isFriday()){
-                                $sesion= Sesion::create([
-                                    'date_session'=>$date,
-                                    'start_time'=>$request['start_time'],
-                                    'end_time'=>$request['end_time'],
-                                    'activity_id'=>$request['activity_id']
-                                ]);
+                            if($dateModifi->isFriday()){
+                                $this->up($request,$dateModifi);
                             }
                             break;
                     }
@@ -110,6 +85,16 @@ class SesionController extends Controller
 
         return redirect('/sessions');
     }
+
+    public function up (Request $request, $dateModifi){
+        $sesion= Sesion::create([
+            'date_session'=>$dateModifi,
+            'start_time'=>$request['start_time'],
+            'end_time'=>$request['end_time'],
+            'activity_id'=>$request['activity_id']
+        ]);
+    }
+
     
 
     /**

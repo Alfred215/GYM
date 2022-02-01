@@ -32,9 +32,9 @@
     
     @foreach($activity->sessions as $session)
     <ul>
-        <li>{{$session->date_session}}</li>
-        <li>{{$session->start_time}}</li>
-        <li>{{$session->end_time}}</li>
+        <li>Fecha: {{$session->date_session}}</li>
+        <li>Hora de inicio: {{$session->start_time}}</li>
+        <li>Hora de fin: {{$session->end_time}}</li>
     </ul>    
     @endforeach
     

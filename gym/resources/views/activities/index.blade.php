@@ -10,7 +10,7 @@
 <body>
 
     <h1>Actividades</h1>
-    <a href="activities/create" class="btn btn-primary float-right">Nuevo</a>
+    <a href="activities/create" class="btn btn-primary float-right">Nuevo actividad</a>
     <br>
     <br>
 
@@ -36,7 +36,8 @@
         </tr>
         @endforelse
     </table>
-
+    <br>
+    <a href="sessions/create" class="btn btn-primary float-right">Nuevas sessiones</a>
 </body>
 
 </html>

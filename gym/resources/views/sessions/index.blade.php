@@ -20,7 +20,7 @@
         </tr>
         @forelse ($sessions as $session)
         <tr>
-            <td>{{$session->name}} </td>
+            <td>{{$session->date_session}} </td>
             <td> <a class="btn btn-primary btn-sm" href="/sessions/{{$session->id}}">Ver</a></td>
             <td> <a class="btn btn-primary btn-sm" href="/sessions/{{$session->id}}/edit">Editar</a></td>
         </tr>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Activity;
-use App\Models\Session;
+use App\Models\Sesion;
 use Illuminate\Http\Request;
 
 class ActivityController extends Controller
@@ -38,9 +38,7 @@ class ActivityController extends Controller
      */
     public function store(Request $request)
     {
-        $activity = Activity::create($request->all());
-
-        return view('sessions.create', ['activity' => $activity->id]);
+        return redirect("/activities");
     }
 
     /**
