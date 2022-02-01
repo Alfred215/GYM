@@ -21,4 +21,8 @@ class Sesion extends Model
     public function activity(){
         return $this->belongsTo(Activity::class);
     }
+
+    public function booking(){
+        return $this->hasMany(Booking::class);
+    }
 }
