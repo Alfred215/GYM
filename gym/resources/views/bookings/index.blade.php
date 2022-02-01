@@ -26,7 +26,7 @@
             <td>{{$booking->fecha}} </td>
             <td>{{$booking->user_id}} </td>
             <td>{{$booking->session_id}} </td>
-            <td>{{$booking->session_id->start_time}} </td>
+            <td>{{$booking->session_id}} </td>
         </tr>
         @empty
         <tr>
