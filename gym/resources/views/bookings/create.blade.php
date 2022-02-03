@@ -11,17 +11,18 @@
     <h1>Seleccionar actividad</h1><br>
     <form action="/bookings" method="POST">
         @csrf
+        <div>
         <label>Actividades: </label><select name="activity_id">
             @foreach($activities as $activity)
         <option value="{{ $activity->id }}">{{ $activity->name }}</option>  
         @endforeach
         </select>
-
-        <label>Sessiones: </label><select name="session_id">
-            @foreach($activity->sessions as $session)
-        <option value="{{ $session->date_session }}">{{ $session->date_session }}</option>
-        @endforeach
-        </select>
+        </div>
+        
+        <div>
+            <label for="mes">Mes</label>
+            <input type="number" name="mes" max="12" min="1">
+        </div>
         
         <input type="hidden" name="id_user" value="{{ Auth::user()->id }}">
 
