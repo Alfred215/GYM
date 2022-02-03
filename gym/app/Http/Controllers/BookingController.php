@@ -18,7 +18,7 @@ class BookingController extends Controller
     public function index()
     {
         $bookings = Booking::all();
-        return view("bookings.index",["bookings"=>$bookings]);
+        return view("bookings.index", ["bookings" => $bookings]);
     }
 
     /**
@@ -27,9 +27,20 @@ class BookingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(Request $request)
+    {   
+        if($request["name"]==1){
+            $activities = Activity::all();
+            return view("bookings.create", ["activities" => $activities]);
+        }else{
+            $activities = Activity::all();
+            return view("bookings.createdos", ["activities" => $activities]);
+        }
+        
+    }
+
+    public function mostrar(Request $request)
     {
-        $activities = Activity::all();
-        return view("bookings.create",["activities"=>$activities]);
+        echo "hola";
     }
 
     /**
@@ -40,23 +51,26 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        $activity_id=$request["activity_id"];
-        $session_date=$request["session_id"];
-        $activities=Activity::all();
 
-        foreach($activities as $activity){
-            if($activity->id==$activity_id){
-                foreach($activity->sessions as $session){
-                    if($session->date_session==$session_date){
-                        $booking= Booking::create([
-                            'fecha'=>Carbon::now(),
-                            'user_id'=>$request["id_user"],
-                            'session_id'=>$session->id 
+        $activity_id = $request["activity_id"];
+        $session_date = $request["session_id"];
+        $activities = Activity::all();
+
+        foreach ($activities as $activity) {
+            if ($activity->id == $activity_id) {
+                foreach ($activity->sessions as $session) {
+                    if ($session->date_session == $session_date) {
+                        $booking = Booking::create([
+                            'fecha' => Carbon::now(),
+                            'user_id' => $request["id_user"],
+                            'session_id' => $session->id
                         ]);
                     }
                 }
             }
         }
+
+        // return redirect("/bookings");
     }
 
     /**
@@ -65,9 +79,8 @@ class BookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Activity $activity)
     {
-        //
     }
 
     /**
