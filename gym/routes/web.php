@@ -24,6 +24,7 @@ Route::get('/', function () {
 
 Route::resource('users', UserController::class);
 Route::resource('bookings', BookingController::class);
+
 Route::resource('activities', ActivityController::class);
 Route::resource('roles', RoleController::class);
 Route::resource('sessions', SesionController::class);

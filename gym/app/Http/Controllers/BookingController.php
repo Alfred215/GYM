@@ -27,20 +27,9 @@ class BookingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(Request $request)
-    {   
-        if($request["name"]==1){
-            $activities = Activity::all();
-            return view("bookings.create", ["activities" => $activities]);
-        }else{
-            $activities = Activity::all();
-            return view("bookings.createdos", ["activities" => $activities]);
-        }
-        
-    }
-
-    public function mostrar(Request $request)
     {
-        echo "hola";
+        $activities = Activity::all();
+        return view("bookings.create", ["activities" => $activities]);
     }
 
     /**

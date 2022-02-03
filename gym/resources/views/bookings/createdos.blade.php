@@ -8,18 +8,13 @@
 </head>
 
 <body>
-    <h1>Seleccionar actividad</h1><br>
+    <h1>Hola</h1><br>
     <form action="/bookings" method="POST">
         @csrf
-        <label>Actividades: </label><select name="activity_id">
-            @foreach($activities as $activity)
-        <option value="{{ $activity->id }}">{{ $activity->name }}</option>  
-        @endforeach
-        </select>
 
         <label>Sessiones: </label><select name="session_id">
-            @foreach($activity->sessions as $session)
-        <option value="{{ $session->date_session }}">{{ $session->date_session }}</option>
+            @foreach($session->date_session as $date)
+        <option value="{{ $session->date_session }}">{{ $date }}</option>
         @endforeach
         </select>
         

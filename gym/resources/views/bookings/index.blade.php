@@ -11,7 +11,7 @@
 
     <h1>Reservas</h1>
     <a href="/bookings/create" value="1" name="create" class="btn btn-primary float-right">Reserva por actividad</a>
-    <a href="/bookings/createdos" value="2" name="create" class="btn btn-primary float-right">Reserva por fecha</a>
+    <a href="/bookings/create" value="2" name="create" class="btn btn-primary float-right">Reserva por fecha</a>
     <br>
     <br>
 
