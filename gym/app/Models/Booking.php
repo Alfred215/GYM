@@ -16,10 +16,10 @@ class Booking extends Model
     ];
 
     public function users(){
-        return $this->belongsTo(User::class);
+        return $this->belongsToMany(User::class);
     }
 
     public function sesions(){
-        return $this->belongsTo(Sesion::class);
+        return $this->belongsToMany(Sesion::class);
     }
 }
