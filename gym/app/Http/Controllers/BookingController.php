@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Booking;
 use App\Models\Activity;
-use App\Models\Sesion;
+use App\Models\User;
 use Carbon\Carbon;
 
 class BookingController extends Controller
@@ -42,9 +42,6 @@ class BookingController extends Controller
     {
         $activity_id=$request["activity_id"];
         $session_date=$request["session_id"];
-        echo $activity_id;
-        echo $session_date;
-
         $activities=Activity::all();
 
         foreach($activities as $activity){
@@ -53,7 +50,7 @@ class BookingController extends Controller
                     if($session->date_session==$session_date){
                         $booking= Booking::create([
                             'fecha'=>Carbon::now(),
-                            'user_id'=>1,
+                            'user_id'=>$request["id_user"],
                             'session_id'=>$session->id 
                         ]);
                     }

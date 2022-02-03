@@ -22,6 +22,8 @@
         <option value="{{ $session->date_session }}">{{ $session->date_session }}</option>
         @endforeach
         </select>
+        
+        <input type="text" id="id_user" value="{{ Auth::user()->id }}">
 
         <div>
             <input type="submit" value="Crear">
