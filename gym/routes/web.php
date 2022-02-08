@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('activities/filter', [ActivityController::class,'filter']);
 Route::resource('users', UserController::class);
 Route::resource('bookings', BookingController::class);
 Route::resource('activities', ActivityController::class);

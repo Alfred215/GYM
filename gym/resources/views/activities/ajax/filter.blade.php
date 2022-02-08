@@ -14,16 +14,6 @@
     <br>
     <br>
 
-    <h2>Busqueda</h2>
-    <form action="" id="formulario">
-    <input type="text" id="filtro">
-    <input type="submit">
-    </form>
-
-    <div id="destinoFiltro">
-    </div>
-    <script src="/js/ajax.js"></script>
-
     <table border="1">
         <tr>
             <th>Nombre</th>
@@ -48,8 +38,6 @@
     </table>
     <br>
     <a href="sessions/create" class="btn btn-primary float-right">Nuevas sessiones</a>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="/js/ajax.js"></script>
 </body>
 
 </html>
