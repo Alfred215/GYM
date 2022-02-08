@@ -24,8 +24,8 @@ class BookingController extends Controller
 
     public function filter(Request $request){
         $filter = $request->filter;
-        $activities = Activity::where('name','LIKE',"%$filter%")->get();
-        return $activities;
+        $sessiones = Sesion::where('activity_id','LIKE',"%$filter%")->get();
+        return $sessiones;
         //return view('activities.ajax.filter',['activities'=>$activities]);
     }
 

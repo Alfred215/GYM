@@ -3,17 +3,18 @@ console.log("enlazado");
 $('#formulario').click(function (e) {
     e.preventDefault();
     console.log("ha hecho click");
-    data = $('#filtro').val();
+    data = $('#activity_id').val();
     console.log(data);
 
-    $.get("/activities/filter?filter=" + data, function (data, status) {
+    $.get("/bookings/filter?filter=" + data, function (data, status) {
         //console.log("Data: " + data + "\nStatus: " + status);
-        //console.log(data);
-        //grabar(data);
-        $('#destinoFiltro').html(data);
+        console.log(data.id);
+        grabar(data);
+        //$('#destino').html(data);
     });
 })
 
-function grabar(dataJ) {
-    //recorrer el dataJ y grabaer en una tabla
+function grabar(data) {
+        var objeto=JSON.parse(date);
+        alert(objeto);
 }
