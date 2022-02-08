@@ -5,31 +5,26 @@
     <meta charset="UTF-8">
     <title>Documento</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/booking.js"></script>
 </head>
 
 <body>
-    <h1>Seleccionar actividad</h1><br>
-    <form action="/bookings" method="POST">
-        @csrf
+
+    <h1>Seleccionar actividad</h1>
+    @csrf
         <div>
         <label>Actividades: </label><select name="activity_id">
             @foreach($activities as $activity)
         <option value="{{ $activity->id }}">{{ $activity->name }}</option>  
         @endforeach
         </select>
-        </div>
-        
-        <div>
-            <label for="mes">Mes</label>
-            <input type="number" name="mes" max="12" min="1">
-        </div>
-        
-        <input type="hidden" name="id_user" value="{{ Auth::user()->id }}">
-
-        <div>
-            <input type="submit" value="Crear">
-        </div>
+    <input type="submit">
     </form>
+
+    <div id="destinoFiltro">
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="/js/booking.js"></script>
 </body>
 
 </html>

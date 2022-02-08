@@ -22,8 +22,8 @@ class ActivityController extends Controller
     public function filter(Request $request){
         $filter = $request->filter;
         $activities = Activity::where('name','LIKE',"%$filter%")->get();
-        //return $studies;
-        return view('activities.ajax.filter',['activities'=>$activities]);
+        return $activities;
+        //return view('activities.ajax.filter',['activities'=>$activities]);
     }
 
     /**

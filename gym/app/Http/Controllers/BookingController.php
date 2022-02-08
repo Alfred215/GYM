@@ -22,12 +22,19 @@ class BookingController extends Controller
         return view("bookings.index", ["bookings" => $bookings]);
     }
 
+    public function filter(Request $request){
+        $filter = $request->filter;
+        $activities = Activity::where('name','LIKE',"%$filter%")->get();
+        return $activities;
+        //return view('activities.ajax.filter',['activities'=>$activities]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
         $activities = Activity::all();
         return view("bookings.create", ["activities" => $activities]);
