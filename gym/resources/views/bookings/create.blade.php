@@ -22,7 +22,7 @@
     </form>
 
     <div id="destino">
-        <form action="/bookings" method="post">
+        <form action="">
             <table id="tabla"></table>
         </form>
         
