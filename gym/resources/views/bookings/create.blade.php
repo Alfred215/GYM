@@ -11,16 +11,21 @@
 <body>
 
     <h1>Seleccionar actividad</h1>
-    <form action="" id="formulario">
+    <form action="">
         @csrf
         <label>Actividades: </label><select id="activity_id" name="activity_id">
             @foreach($activities as $activity)
             <option value="{{ $activity->id }}">{{ $activity->name }}</option>
             @endforeach
         </select>
+        <input type="submit" value="Buscar" id="formulario">
     </form>
 
     <div id="destino">
+        <form action="/bookings" method="post">
+            <table id="tabla"></table>
+        </form>
+        
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="/js/booking.js"></script>

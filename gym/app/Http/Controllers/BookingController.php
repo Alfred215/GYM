@@ -26,7 +26,7 @@ class BookingController extends Controller
         $filter = $request->filter;
         $sessiones = Sesion::where('activity_id','LIKE',"%$filter%")->get();
         return $sessiones;
-        //return view('activities.ajax.filter',['activities'=>$activities]);
+        //return view('bookings.ajax.filter',['sessiones'=>$sessiones]);
     }
 
     /**
@@ -48,6 +48,7 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
+        echo "hola";
         return redirect("/bookings");
     }
 

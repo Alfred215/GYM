@@ -21,12 +21,12 @@
             <th>Duracción en minutos</th>
             <th>Número maximo de participantes</th>
         </tr>
-        @forelse ($activities as $activity)
+        @forelse ($sessions as $session)
         <tr>
-            <td>{{$activity->name}} </td>
-            <td>{{$activity->descrip}} </td>
-            <td>{{$activity->duration}} </td>
-            <td>{{$activity->nummembers}} </td>
+            <td>{{$session->name}} </td>
+            <td>{{$session->descrip}} </td>
+            <td>{{$session->duration}} </td>
+            <td>{{$session->nummembers}} </td>
             <td> <a class="btn btn-primary btn-sm" href="/activities/{{$activity->id}}">Ver</a></td>
             <td> <a class="btn btn-primary btn-sm" href="/activities/{{$activity->id}}/edit">Editar</a></td>
         </tr>
