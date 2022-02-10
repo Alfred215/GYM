@@ -22,30 +22,31 @@ $("#reservar").click(function(e){
     variable = $('#session_id').val();
     user=$('#user_id').val();
     console.log(user);
-    // $.get("/bookings/store?store="+variable,function(data,status){
-    //     console.log(data);
-    // });
-    $.ajax({
-        url:"bookings",
-
-        // headers:{'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')},
-
-        data:{
-            "store" : variable
-            },
-
-        type:'POST',
-
-        // dataType:'text',
-
-        success: function(data){
-            console.log("Hola"+data);
-        },
-
-        error: function(xhr,status){
-            console.log("Error");
-        }
+    $.get("/bookings/guardar?store="+variable,function(data,status){
+        console.log(data);
     });
+
+    // $.ajax({
+    //     url:"bookings/guardar",
+
+    //     headers:{'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')},
+
+    //     data:{
+    //         "store" : variable
+    //         },
+
+    //     type:'POST',
+
+    //     dataType:'text',
+
+    //     success: function(data){
+    //         console.log("Hola"+data);
+    //     },
+
+    //     error: function(xhr,status){
+    //         console.log("Error");
+    //     }
+    // });
 });
 
 function grabar(data) {

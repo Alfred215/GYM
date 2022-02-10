@@ -21,7 +21,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::post('bookings/guardar',[BookingController::class,'store']);
+Route::get('roles',function(){return "has ...";})->middleware('role');
+
+//Route::post('bookings/guardar',[BookingController::class,'store']);
+Route::get('bookings/guardar',[BookingController::class,'store'])->middleware('auth');
 Route::get('bookings/filter', [BookingController::class,'filter']);
 Route::get('activities/filter', [ActivityController::class,'filter']);
 Route::resource('users', UserController::class);

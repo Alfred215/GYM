@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-//use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Booking;
 use App\Models\Activity;
 use App\Models\Sesion;
-// use Auth;
+use Carbon\Carbon;
 
 class BookingController extends Controller
 {
@@ -52,9 +52,14 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {   
-        // $session_id=$request->store;
-        // $user_id= Auth::user()->id;
-        return "hola";
+        $session_id=$request->store;
+        $user_id= Auth::id();
+        $booking= Booking::create([
+            'fecha'=>new Carbon(),
+            'user_id'=>$user_id,
+            'session_id'=>$session_id
+        ]);
+        return $session_id;
     }
 
     /**
