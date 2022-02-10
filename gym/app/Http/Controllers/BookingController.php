@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers;
 
+//use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Booking;
 use App\Models\Activity;
 use App\Models\Sesion;
-use App\Models\User;
-use Carbon\Carbon;
+// use Auth;
 
 class BookingController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -47,8 +51,10 @@ class BookingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        return redirect("/bookings");
+    {   
+        // $session_id=$request->store;
+        // $user_id= Auth::user()->id;
+        return "hola";
     }
 
     /**

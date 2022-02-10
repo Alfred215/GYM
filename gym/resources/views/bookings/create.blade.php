@@ -22,12 +22,16 @@
     </form>
 
     <div id="destino">
-        <form action="">
-            <table id="tabla"></table>
+        <input type="text" id="user_id" value="{{ Auth::user()->id }}">
+        <form action="" >
+        <label>Sessiones: </label><select id="session_id" name="session_id">
+
+            </select>
+            <input type="submit" value="Reservar" id="reservar">
         </form>
         
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="/js/jquery-3.6.0.min.js"></script>
     <script src="/js/booking.js"></script>
 </body>
 

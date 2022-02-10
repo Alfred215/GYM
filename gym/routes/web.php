@@ -5,7 +5,6 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\SesionController;
 use App\Http\Controllers\BookingController;
-use App\Models\Booking;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,10 +21,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::post('bookings/guardar',[BookingController::class,'store']);
 Route::get('bookings/filter', [BookingController::class,'filter']);
 Route::get('activities/filter', [ActivityController::class,'filter']);
 Route::resource('users', UserController::class);
-Route::resource('bookings', BookingController::class);
+Route::resource('bookings', BookingController::class)->middleware('auth');
 Route::resource('activities', ActivityController::class);
 Route::resource('roles', RoleController::class);
 Route::resource('sessions', SesionController::class);
