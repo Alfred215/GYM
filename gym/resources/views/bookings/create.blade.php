@@ -22,7 +22,7 @@
     </form>
 
     <div id="destino">
-        <input type="text" id="user_id" value="{{ Auth::user()->id }}">
+        <input type="hidden" id="user_id" value="{{ Auth::user()->id }}">
         <form action="" >
         <label>Sessiones: </label><select id="session_id" name="session_id">
 
