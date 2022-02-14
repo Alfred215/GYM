@@ -22,7 +22,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('roles',function(){return "has ...";})->middleware('role');
-Route::get('activities', [ActivityController::class, 'index'])->middleware('auth');
+Route::get('activity', [ActivityController::class, 'public'])->middleware('auth');
 Route::get('bookings/date', [BookingController::class, 'createDate'])->middleware('auth');
 Route::get('bookings/filter2',[BookingController::class,'filter2'])->middleware('auth');
 Route::post('bookings/guardar',[BookingController::class,'store'])->middleware('auth');

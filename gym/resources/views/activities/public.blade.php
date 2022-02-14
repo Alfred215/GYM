@@ -13,7 +13,6 @@
     <a href="activities/create" class="btn btn-primary float-right">Nuevo actividad</a>
     <br>
     <br>
-
     <table border="1">
         <tr>
             <th>Nombre</th>
@@ -27,8 +26,7 @@
             <td>{{$activity->descrip}} </td>
             <td>{{$activity->duration}} </td>
             <td>{{$activity->nummembers}} </td>
-            <td> <a class="btn btn-primary btn-sm" href="/activities/{{$activity->id}}">Ver</a></td>
-            <td> <a class="btn btn-primary btn-sm" href="/activities/{{$activity->id}}/edit">Editar</a></td>
+            <td> <a class="btn btn-primary btn-sm" href="/activity/{{$activity->id}}">Ver</a></td>
         </tr>
         @empty
         <tr>

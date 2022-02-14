@@ -19,11 +19,11 @@ class ActivityController extends Controller
         return view('activities.index', ['activities' => $activities]);
     }
 
-    public function filter(Request $request){
-        $filter = $request->filter;
-        $activities = Activity::where('name','LIKE',"%$filter%")->get();
-        return $activities;
-        //return view('activities.ajax.filter',['activities'=>$activities]);
+    public function public()
+    {
+        $activities = Activity::all();
+
+        return view('activities.public', ['activities' => $activities]);
     }
 
     /**
