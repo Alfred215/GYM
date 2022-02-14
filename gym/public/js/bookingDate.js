@@ -37,7 +37,7 @@ $("#reservar").click(function(e){
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     }).done(function(data){
-        $("body").append("<a href='/bookings'>Volver</a>")
+        $("body").append("<a href='/'>Volver</a>")
         alert("Texto grabado con exito");
     }).fail(function(){
         alert("Ha existido un error");
