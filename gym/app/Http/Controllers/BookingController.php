@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Booking;
 use App\Models\Activity;
 use App\Models\Sesion;
+use App\Models\User;
 use Carbon\Carbon;
 
 class BookingController extends Controller
@@ -66,11 +67,29 @@ class BookingController extends Controller
     {   
         $session_id=$request->store;
         $user_id= Auth::id();
-        $booking= Booking::create([
+        $reservas=Booking::all();
+        $contador=0;
+        foreach($reservas as $reserva){
+            if($reserva->session_id==$session_id){
+                $contador++;
+            }
+        }
+        $nummax=0;
+        $sessions=Sesion::all();
+        foreach($sessions as $session){
+            if($session==$session_id){
+                $nummax=$session->activity_id->nummembers;
+            }
+        }
+
+        if($contador<$nummax){
+            $booking= Booking::create([
             'fecha'=>new Carbon(),
             'user_id'=>$user_id,
             'session_id'=>$session_id
-        ]);
+            ]);
+        }
+        
         return $session_id;
     }
 
