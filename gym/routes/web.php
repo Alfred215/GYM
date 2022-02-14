@@ -22,11 +22,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('roles',function(){return "has ...";})->middleware('role');
-
-Route::post('bookings/guardar',[BookingController::class,'store']);
-Route::get('bookings/guardar',[BookingController::class,'store'])->middleware('auth');
+Route::get('bookings/date', [BookingController::class, 'createDate']);
+Route::get('bookings/guardar2',[BookingController::class,'store2'])->middleware('auth');
+Route::get('bookings/filter2',[BookingController::class,'filter2'])->middleware('auth');
+Route::post('bookings/guardar',[BookingController::class,'store'])->middleware('auth');
 Route::get('bookings/filter', [BookingController::class,'filter']);
-Route::get('activities/filter', [ActivityController::class,'filter']);
 Route::resource('users', UserController::class);
 Route::resource('bookings', BookingController::class)->middleware('auth');
 Route::resource('activities', ActivityController::class);

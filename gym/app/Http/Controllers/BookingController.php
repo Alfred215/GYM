@@ -33,6 +33,13 @@ class BookingController extends Controller
         //return view('bookings.ajax.filter',['sessiones'=>$sessiones]);
     }
 
+    public function filter2(Request $request){
+        $filter = $request->filter2;
+        $sessions = Sesion::where('date_session','LIKE',"%$filter%")->get();
+        return $sessions;
+        //return view('bookings.ajax.filter',['sessiones'=>$sessiones]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -42,6 +49,11 @@ class BookingController extends Controller
     {
         $activities = Activity::all();
         return view("bookings.create", ["activities" => $activities]);
+    }
+
+    public function createDate(){
+        $sessions = Sesion::all();
+        return view("bookings.createdate",["sessions"=>$sessions]);
     }
 
     /**
