@@ -16,6 +16,13 @@ $('#formulario').click(function (e) {
 
 });
 
+function grabar(data) {
+    var select = document.getElementById("session_id");
+    for(var i=0;i<data.length;i++){
+        select.innerHTML+="<option value='"+data[i].id+"'>"+data[i].date_session+" "+data[i].start_time+"</option>";
+    }
+}
+
 $("#reservar").click(function(e){
     e.preventDefault();
     console.log("reserva");
@@ -40,9 +47,3 @@ $("#reservar").click(function(e){
     });
 });
 
-function grabar(data) {
-    var select = document.getElementById("session_id");
-    for(var i=0;i<data.length;i++){
-        select.innerHTML+="<option value='"+data[i].id+"'>"+data[i].date_session+" "+data[i].start_time+"</option>";
-    }
-}

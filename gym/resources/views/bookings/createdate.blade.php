@@ -21,7 +21,7 @@
 
     <div id="destino">
         <form action="" >
-        <label>Actividades: </label><select id="activity_id" name="activity_id">
+        <label>Actividades: </label><select id="session_id" name="session_id">
 
             </select>
             <input type="submit" value="Reservar" id="reservar">
