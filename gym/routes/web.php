@@ -23,7 +23,7 @@ Route::get('/', function () {
 });
 Route::get('roles',function(){return "has ...";})->middleware('role');
 
-//Route::post('bookings/guardar',[BookingController::class,'store']);
+Route::post('bookings/guardar',[BookingController::class,'store']);
 Route::get('bookings/guardar',[BookingController::class,'store'])->middleware('auth');
 Route::get('bookings/filter', [BookingController::class,'filter']);
 Route::get('activities/filter', [ActivityController::class,'filter']);
