@@ -17,10 +17,10 @@ class CheckRole
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::id()==3){
+        if(Auth::user()->id==1){
             return $next($request);
         }else{
-            return redirect("/activities");
+            return redirect("/activity");
         }
         
     }

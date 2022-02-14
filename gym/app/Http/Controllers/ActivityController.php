@@ -58,6 +58,7 @@ class ActivityController extends Controller
         return view('activities.show', ['activity' => $activity]);
     }
 
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -81,6 +82,10 @@ class ActivityController extends Controller
         //No funciona
         $activities = Activity::find($activity->id);
         //$activity->fill($request->all());
+        // $activities->name=$request["name"];
+        // $activities->descrip=$request["descrip"];
+        // $activities->duration=$request["duration"];
+        // $activities->nummenbers=$request["nummembers"];
         $activities->save();
         return redirect('/activities');
     }
