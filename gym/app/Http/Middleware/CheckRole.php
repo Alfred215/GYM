@@ -20,7 +20,7 @@ class CheckRole
         if(Auth::user()->id==1){
             return $next($request);
         }else{
-            return redirect("/activity");
+            return redirect("/");
         }
         
     }

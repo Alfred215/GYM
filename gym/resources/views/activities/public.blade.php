@@ -10,7 +10,6 @@
 <body>
 
     <h1>Actividades</h1>
-    <a href="activities/create" class="btn btn-primary float-right">Nuevo actividad</a>
     <br>
     <br>
     <table border="1">
@@ -26,7 +25,7 @@
             <td>{{$activity->descrip}} </td>
             <td>{{$activity->duration}} </td>
             <td>{{$activity->nummembers}} </td>
-            <td> <a class="btn btn-primary btn-sm" href="/activity/{{$activity->id}}">Ver</a></td>
+            <td> <a class="btn btn-primary btn-sm" href="/activities/{{$activity->id}}">Ver</a></td>
         </tr>
         @empty
         <tr>
@@ -35,7 +34,6 @@
         @endforelse
     </table>
     <br>
-    <a href="sessions/create" class="btn btn-primary float-right">Nuevas sessiones</a>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="/js/ajax.js"></script>
 </body>

@@ -9,8 +9,6 @@
 
 <body>
     <h1>Usuario</h1>
-
-
     <ul>
         <li>
             <strong>Nombre</strong>
@@ -45,6 +43,10 @@
             {{ $user->role->name }}
         </li>
     </ul>
+
+    <h1>Sesiones reservadas</h1>
+
+
 </body>
 
 </html>
