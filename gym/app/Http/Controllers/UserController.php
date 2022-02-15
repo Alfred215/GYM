@@ -72,11 +72,12 @@ class UserController extends Controller
     {
         $bookings=Booking::Where('user_id','LIKE',"%$user->id%")->get();
         foreach($bookings as $booking){
-            echo $booking->session_id." ";   
+            echo $booking->session_id." ";
+            $sessions[]=Sesion::Where('id','LIKE',"%$booking->session_id%")->get();  
         }
         
         //$sessions=Sesion::Where('id','LIKE',"%$bookings->session_id%")->get();
-        //return view('users.show',['user' => $user, 'bookings'=>$bookings]);
+        return view('users.show',['user' => $user, 'sessions'=>$sessions]);
     }
 
     /**

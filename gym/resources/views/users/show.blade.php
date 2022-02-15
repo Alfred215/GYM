@@ -46,9 +46,9 @@
 
     <h1>Sesiones reservadas</h1>
 
-    @foreach($bookings as $booking)
+    @foreach($sessions as $session)
     <ul>
-        <li>Hora: {{$booking->users->id}}</li>
+        <li>Hora: {{$session->id}}</li>
         
     </ul>    
     @endforeach
