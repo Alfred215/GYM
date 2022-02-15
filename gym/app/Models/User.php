@@ -12,6 +12,8 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $table='users';
+
     protected $fillable = [
         'name',
         'dni',
@@ -29,7 +31,7 @@ class User extends Authenticatable
     }
 
     public function booking(){
-        return $this->belongsTo(Booking::class);
+        return $this->belongsToMany(Booking::class);
     }
 
     /**

@@ -9,6 +9,8 @@ class Sesion extends Model
 {
     use HasFactory;
 
+    protected $table='sesions';
+
     protected $fillable=[
         'date_session',
         'start_time',
@@ -19,10 +21,10 @@ class Sesion extends Model
     protected $date =['date'];
 
     public function activity(){
-        return $this->belongsTo(Activity::class);
+        return $this->belongsToMany(Activity::class);
     }
 
     public function booking(){
-        return $this->belongsTo(Booking::class);
+        return $this->belongsToMany(Booking::class);
     }
 }

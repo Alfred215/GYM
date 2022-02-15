@@ -46,7 +46,12 @@
 
     <h1>Sesiones reservadas</h1>
 
-
+    @foreach($bookings as $booking)
+    <ul>
+        <li>Hora: {{$booking->users->id}}</li>
+        
+    </ul>    
+    @endforeach
 </body>
 
 </html>
