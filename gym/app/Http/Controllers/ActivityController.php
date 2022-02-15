@@ -44,6 +44,15 @@ class ActivityController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = [
+            'name' => 'required',
+            'descrip' => 'required',
+            'duration' => 'required',
+            'nummembers' => 'required',
+        ];
+
+        $request->validate($rules);
+
         return redirect("/activities");
     }
 
@@ -65,8 +74,17 @@ class ActivityController extends Controller
      * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function edit(Activity $activity)
-    {
+    public function edit(Request $request, Activity $activity)
+    {   
+        $rules = [
+            'name' => 'required',
+            'descrip' => 'required',
+            'duration' => 'required',
+            'nummembers' => 'required',
+        ];
+
+        $request->validate($rules);
+
         return view('activities.edit', ['activity' => $activity]);
     }
 

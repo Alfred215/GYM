@@ -27,7 +27,7 @@ Route::get('bookings/date', [BookingController::class, 'createDate'])->middlewar
 Route::get('bookings/filter2',[BookingController::class,'filter2'])->middleware('auth');
 Route::post('bookings/guardar',[BookingController::class,'store'])->middleware('auth');
 Route::get('bookings/filter', [BookingController::class,'filter'])->middleware('auth');
-Route::resource('users', UserController::class)->middleware('auth');
+Route::resource('users', UserController::class);
 Route::resource('bookings', BookingController::class)->middleware('auth');
 Route::resource('activities', ActivityController::class)->middleware('auth');
 Route::resource('roles', RoleController::class)->middleware('role');

@@ -39,10 +39,16 @@ class SesionController extends Controller
      */
     public function store(Request $request)
     {
-        //$dt = Carbon::now();
-        // $date->monthName;
-        // var_dump($date->month);
-        // var_dump($date->daysInMonth);
+        $rules = [
+            'dias' => 'required',
+            'mes' => 'required',
+            'start_time' => 'required',
+            'end_time' => 'required',
+            'activity_id' => 'required',
+        ];
+
+        $request->validate($rules);
+
         $dias = $request['dias'];
         $mes = $request['mes'];
         $date= Carbon::createFromDate(2022,$mes,01,'Europe/Madrid');

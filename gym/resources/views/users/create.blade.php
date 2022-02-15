@@ -67,18 +67,30 @@
         <div>
             <label for="name">NOMBRE COMPLETO</label><br>
             <input type="text" name="name">
+            @error('name')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div>
             <label for="dni">DNI</label><br>
             <input type="text" name="dni">
+            @error('dni')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div>
             <label for="email">Email</label><br>
             <input type="text" name="email">
+            @error('email')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div>
             <label for="password">Contraseña</label><br>
             <input type="password" name="password">
+            @error('password')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div>
             <label for="weight">PESO</label><br>
