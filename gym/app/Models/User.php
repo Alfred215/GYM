@@ -28,13 +28,11 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
-    public function booking(){
-        return $this->belongsToMany(Booking::class);
+    public function users(){
+        return $this->belongsTo(Sesion::class);
     }
 
-    public function sesions(){
-        return $this->belongsToMany(Sesion::class);
-    }
+
 
     /**
      * The attributes that should be hidden for serialization.

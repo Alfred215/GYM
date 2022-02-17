@@ -38,10 +38,10 @@ $("#reservar").click(function(e){
         }
     }).done(function(data){
         $("body").append("<a href='/'>Volver</a>")
-        alert("Texto grabado con exito");
+        console.log("Texto grabado con exito");
     }).fail(function(){
-        alert("Ha existido un error");
+        console.log("Ha existido un error");
     }).always(function(){
-        alert("Trabajo realizado");
+        alert("Reserva con exito, puedes volver o hacer otra reserva");
     });
 });

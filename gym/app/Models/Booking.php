@@ -9,7 +9,7 @@ class Booking extends Model
 {
     use HasFactory;
 
-    protected $table = "user_sesion";
+    protected $table='user_sesion';
 
     protected $fillable=[
         'fecha',
