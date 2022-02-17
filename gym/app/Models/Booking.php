@@ -9,19 +9,13 @@ class Booking extends Model
 {
     use HasFactory;
 
-    protected $table='user_sesion';
+    protected $table='sesion_user';
 
     protected $fillable=[
         'fecha',
         'user_id',
-        'session_id'
+        'sesion_id'
     ];
 
-    public function users(){
-        return $this->belongsToMany(User::class);
-    }
-
-    public function sesions(){
-        return $this->belongsToMany(Sesion::class);
-    }
+    
 }

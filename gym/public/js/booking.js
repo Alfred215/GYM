@@ -38,7 +38,8 @@ $("#reservar").click(function(e){
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     }).done(function(data){
-        $("body").append("<a href='/'>Volver</a>")
+        $("a").remove();
+        $("body").append("<a href='/'>Volver</a>");
         console.log("Texto grabado con exito");
     }).fail(function(){
         console.log("Ha existido un error");

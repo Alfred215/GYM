@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UserSesion extends Migration
+class CreateSesionUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class UserSesion extends Migration
      */
     public function up()
     {
-        Schema::create('user_sesion', function (Blueprint $table) {
+        Schema::create('sesion_user', function (Blueprint $table) {
             $table->id();
             $table->date("fecha");
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('session_id');
+            $table->unsignedBigInteger('sesion_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('session_id')->references('id')->on('sesions')->onDelete('cascade');
+            $table->foreign('sesion_id')->references('id')->on('sesions')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class UserSesion extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('sesion_user');
     }
 }

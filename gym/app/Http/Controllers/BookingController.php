@@ -85,7 +85,7 @@ class BookingController extends Controller
             $booking= Booking::create([
             'fecha'=>new Carbon(),
             'user_id'=>$user_id,
-            'session_id'=>$session_id
+            'sesion_id'=>$session_id
             ]);
         
         return $session_id;

@@ -19,7 +19,7 @@ class Sesion extends Model
     protected $date =['date'];
 
     public function activity(){
-        return $this->belongsToMany(Activity::class);
+        return $this->belongsTo(Activity::class);
     }
 
     public function users(){

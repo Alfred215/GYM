@@ -70,9 +70,11 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //$bookings=Booking::Where('user_id','LIKE',"%$user->id%")->get();
-
-        return view('users.show',['user' => $user]);
+        // $sesion_user = User::where('id', 'LIKE', $user->id)->with('sesions')->get();
+        // dd($sesion_user);
+        //dd($user);
+        // dd($user->sesions());
+        return view('users.show',['user'=>$user]);
     }
 
     /**

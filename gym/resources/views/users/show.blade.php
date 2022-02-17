@@ -42,14 +42,17 @@
             <strong>Rol</strong>
             {{ $user->role->name }}
         </li>
+        
     </ul>
 
     <h1>Sesiones reservadas</h1>
 
-    @foreach($user->sesions as $session)
+
+    @foreach($user->sesions as $sesion)
     <ul>
-        <li>Hora</li>
-        
+        <li>Hora: {{$sesion->start_time}}</li>
+        <li>Fecha: {{$sesion->date_session}}</li>
+        <li>Activity: {{$sesion->activity->name}}</li> 
     </ul>    
     @endforeach
 </body>

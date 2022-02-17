@@ -32,6 +32,10 @@ class User extends Authenticatable
         return $this->belongsToMany(Sesion::class);
     }
 
+    public function addSesions(User $user){
+        $this->sesions()->attach($user);
+    }
+
 
 
     /**
