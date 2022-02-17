@@ -52,7 +52,7 @@
     <ul>
         <li>Hora: {{$sesion->start_time}}</li>
         <li>Fecha: {{$sesion->date_session}}</li>
-        <li>Activity: {{$sesion->activity->name}}</li> 
+        <li>Activity: {{$sesion->activity->name}}</li>
     </ul>    
     @endforeach
 </body>

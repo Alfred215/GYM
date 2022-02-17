@@ -13,8 +13,8 @@ use Carbon\Carbon;
 class BookingController extends Controller
 {
     public function __construct(){
-        $this->middleware('role')->except('create','createDate','filter','filter2');
-        $this->middleware('auth')->except('index','store','edit','update');
+        $this->middleware('role')->except('create','createDate','filter','filter2','store');
+        $this->middleware('auth')->except('index','edit','update');
     }
     
     /**
@@ -98,7 +98,7 @@ class BookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Activity $activity)
+    public function show(Booking $booking)
     {
     }
 
@@ -131,8 +131,8 @@ class BookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Booking $booking)
     {
-        //
+
     }
 }
