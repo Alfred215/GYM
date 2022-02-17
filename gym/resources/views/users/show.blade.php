@@ -48,7 +48,7 @@
 
     @foreach($user->sesions as $session)
     <ul>
-        <li>Hora:{{$session->start_time}}</li>
+        <li>Hora</li>
         
     </ul>    
     @endforeach

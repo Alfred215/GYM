@@ -28,8 +28,8 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
-    public function users(){
-        return $this->belongsTo(Sesion::class);
+    public function sesions(){
+        return $this->belongsToMany(Sesion::class);
     }
 
 
