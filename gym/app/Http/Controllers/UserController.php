@@ -70,14 +70,9 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        $bookings=Booking::Where('user_id','LIKE',"%$user->id%")->get();
-        foreach($bookings as $booking){
-            echo $booking->session_id." ";
-            $sessions[]=Sesion::Where('id','LIKE',"%$booking->session_id%")->get();  
-        }
-        
-        //$sessions=Sesion::Where('id','LIKE',"%$bookings->session_id%")->get();
-        return view('users.show',['user' => $user, 'sessions'=>$sessions]);
+        //$bookings=Booking::Where('user_id','LIKE',"%$user->id%")->get();
+
+        return view('users.show',['user' => $user]);
     }
 
     /**

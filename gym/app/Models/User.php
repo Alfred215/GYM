@@ -32,6 +32,10 @@ class User extends Authenticatable
         return $this->belongsToMany(Booking::class);
     }
 
+    public function sesions(){
+        return $this->belongsToMany(Sesion::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

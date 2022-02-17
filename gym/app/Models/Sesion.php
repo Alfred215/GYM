@@ -25,4 +25,8 @@ class Sesion extends Model
     public function booking(){
         return $this->belongsToMany(Booking::class);
     }
+
+    public function users(){
+        return $this->belongsToMany(User::class);
+    }
 }
