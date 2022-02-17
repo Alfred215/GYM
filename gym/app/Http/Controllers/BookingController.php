@@ -13,7 +13,8 @@ use Carbon\Carbon;
 class BookingController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth');
+        $this->middleware('role')->except('create','createDate','filter','filter2');
+        $this->middleware('auth')->except('index','store','edit','update');
     }
     
     /**

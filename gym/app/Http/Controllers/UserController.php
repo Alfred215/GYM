@@ -10,6 +10,14 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    public function __construct(){
+        $this->middleware('role')->except('show','create');
+        $this->middleware('auth')->except('create','index','store','edit','update');
+
+    }
+    
+        
+    
     /**
      * Display a listing of the resource.
      *
@@ -59,7 +67,7 @@ class UserController extends Controller
         'birthday' => $request['birthday'],
         'sex' => $request['sex'],
         'role_id' =>1]);
-        return redirect('/users');
+        return redirect('/');
     }
 
     /**
@@ -70,10 +78,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        // $sesion_user = User::where('id', 'LIKE', $user->id)->with('sesions')->get();
-        // dd($sesion_user);
-        //dd($user);
-        // dd($user->sesions());
+
         return view('users.show',['user'=>$user]);
     }
 

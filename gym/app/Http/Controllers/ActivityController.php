@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class ActivityController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('role')->except('public','show');
+        $this->middleware('auth')->except('index','create','store','edit','update');
+    }
     /**
      * Display a listing of the resource.
      *

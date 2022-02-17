@@ -10,6 +10,10 @@ use App\Models\Activity;
 
 class SesionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('role');
+    }
     /**
      * Display a listing of the resource.
      *
