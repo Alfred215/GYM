@@ -9,9 +9,11 @@
 
 <body>
     <h1>Editar un usuario</h1><br>
-    <form action="/users" method="post">
+    <form action="/user/update" method="post">
         @csrf
-        <input type="hidden" name="_method" value="PUT">
+        <div>
+            <input type="hidden" name="id" value="{{$user->id}}">
+        </div>
         <div>
             <label for="name">NOMBRE COMPLETO</label>
             <input type="text" name="name" value="{{$user->name}}">
@@ -23,10 +25,6 @@
         <div>
             <label for="email">Email</label>
             <input type="text" name="email" value="{{$user->email}}">
-        </div>
-        <div>
-            <label for="password">Password</label>
-            <input type="text" name="email" value="{{$user->password}}">
         </div>
         <div>
             <label for="weight">PESO</label>

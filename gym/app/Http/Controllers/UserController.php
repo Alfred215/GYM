@@ -100,18 +100,18 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request)
     {   
-        $rules = [
-            'name' => 'required',
-            'dni' => 'required|max:9|min:9',
-            'email' => 'required',
-            'password' => 'required|min:8',
-        ];
-
-        $request->validate($rules);
-        
-        $user->fill($request->all());
+        $user=User::find($request['id']);
+        $user->name=$request['name'];
+        $user->dni=$request['dni'];
+        $user->email=$request['email'];
+        //$user->password=bcrypt($request['password']);
+        $user->weight=$request['weight'];
+        $user->height=$request['height'];
+        $user->birthday=$request['birthday'];
+        $user->sex=$request['sex'];
+        $user->role_id=$request['role_id'];
         $user->save();
         return redirect('/users');
     }

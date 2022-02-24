@@ -26,6 +26,8 @@ Route::get('activity', [ActivityController::class, 'public']);
 Route::get('bookings/date', [BookingController::class, 'createDate']);
 Route::get('bookings/filter2',[BookingController::class,'filter2']);
 Route::post('bookings/guardar',[BookingController::class,'store']);
+Route::post('activity/update',[ActivityController::class,'update']);
+Route::post('user/update',[UserController::class,'update']);
 Route::get('bookings/filter', [BookingController::class,'filter']);
 Route::resource('users', UserController::class);
 Route::resource('bookings', BookingController::class);

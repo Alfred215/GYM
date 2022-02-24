@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use App\Models\Activity;
 use Illuminate\Http\Request;
 
@@ -81,15 +81,6 @@ class ActivityController extends Controller
      */
     public function edit(Request $request, Activity $activity)
     {   
-        $rules = [
-            'name' => 'required',
-            'descrip' => 'required',
-            'duration' => 'required',
-            'nummembers' => 'required',
-        ];
-
-        $request->validate($rules);
-
         return view('activities.edit', ['activity' => $activity]);
     }
 
@@ -101,15 +92,23 @@ class ActivityController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Activity $activity)
-    {
-        //No funciona
-        $activities = Activity::find($activity->id);
-        //$activity->fill($request->all());
-        // $activities->name=$request["name"];
-        // $activities->descrip=$request["descrip"];
-        // $activities->duration=$request["duration"];
-        // $activities->nummenbers=$request["nummembers"];
-        $activities->save();
+    {   
+        $rules = [
+            'name' => 'required',
+            'descrip' => 'required',
+            'duration' => 'required',
+            'nummembers' => 'required',
+        ];
+
+        $request->validate($rules);
+        
+
+        $activity = Activity::find($request['id']);
+        $activity->name = $request["name"];
+        $activity->descrip = $request["descrip"];
+        $activity->duration = $request["duration"];
+        $activity->nummembers = $request["nummembers"];
+        $activity->save();
         return redirect('/activities');
     }
 

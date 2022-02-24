@@ -9,8 +9,11 @@
 
 <body>
     <h1>Editar una actividad</h1><br>
-    <form action="/activities" method="PUT">
+    <form action="/activity/update" method="post">
         @csrf
+        <div>
+            <input type="hidden" name="id" value="{{$activity->id}}">
+        </div>
         <div>
             <label for="name">NOMBRE</label>
             <input type="text" name="name" value="{{$activity->name}}">

@@ -28,21 +28,21 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'Frodo García',
+            'name' => 'Sergio García',
             'dni' => '12345678B',
-            'email' => 'frodo@gmail.com',
+            'email' => 'sergio@gmail.com',
             'password' => bcrypt('123456789'),
             'weight' => '79',
             'height' => '1,85',
             'birthday' => '2000/01/01',
             'sex' => 'Masculino',
-            'role_id' => 2
+            'role_id' => 1
         ]);
 
         User::create([
-            'name' => 'Fredo García',
+            'name' => 'Javi García',
             'dni' => '12345678C',
-            'email' => 'fredo@gmail.com',
+            'email' => 'javi@gmail.com',
             'password' => bcrypt('123456789'),
             'weight' => '79',
             'height' => '1,85',
