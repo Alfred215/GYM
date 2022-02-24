@@ -18,8 +18,22 @@ class ActivitySeeder extends Seeder
         Activity::create([
             'name' => 'Yoga',
             'descrip' => 'Relax',
-            'duration' => '120m',
-            'nummembers' => '17'
+            'duration' => '120',
+            'nummembers' => '20'
+        ]);
+
+        Activity::create([
+            'name' => 'Kickboxing',
+            'descrip' => 'Pelear',
+            'duration' => '120',
+            'nummembers' => '30'
+        ]);
+
+        Activity::create([
+            'name' => 'Workout',
+            'descrip' => 'Resistente',
+            'duration' => '120',
+            'nummembers' => '30'
         ]);
     }
 }

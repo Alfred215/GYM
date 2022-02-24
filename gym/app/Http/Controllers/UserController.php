@@ -106,7 +106,7 @@ class UserController extends Controller
         $user->name=$request['name'];
         $user->dni=$request['dni'];
         $user->email=$request['email'];
-        //$user->password=bcrypt($request['password']);
+        $user->password=bcrypt($request['password']);
         $user->weight=$request['weight'];
         $user->height=$request['height'];
         $user->birthday=$request['birthday'];

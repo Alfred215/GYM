@@ -27,6 +27,10 @@
             <input type="text" name="email" value="{{$user->email}}">
         </div>
         <div>
+            <label for="password">Nueva password</label>
+            <input type="text" name="password" value="">
+        </div>
+        <div>
             <label for="weight">PESO</label>
             <input type="text" name="weight" value="{{$user->weight}}">
         </div>

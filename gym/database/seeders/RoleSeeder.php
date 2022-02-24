@@ -21,11 +21,6 @@ class RoleSeeder extends Seeder
         ]);
 
         Role::create([
-            'id' => 2,
-            'name' => 'entrenador'
-        ]);
-
-        Role::create([
             'id' => 3,
             'name' => 'administrador'
         ]);
