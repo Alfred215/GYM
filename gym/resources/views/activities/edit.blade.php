@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-
+@extends('layouts.app')
 <head>
     <meta charset="UTF-8">
     <title>Documento</title>

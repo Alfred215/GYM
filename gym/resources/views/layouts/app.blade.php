@@ -47,12 +47,11 @@
                         </li>
                         @endif
                         @else
-
                         @if(Auth::user()->role_id==3)
                         <div class="row">
                             <br>
                             <div class="col-lg-2" style="background-color: grey; padding:10px;">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" style="padding:5px; color:white; href=" #" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" style="padding:5px; color:white;" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
                                 <a href="/users" style="padding:5px; color:white;">Users</a>

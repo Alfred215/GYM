@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        @extends('layouts.app')
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
