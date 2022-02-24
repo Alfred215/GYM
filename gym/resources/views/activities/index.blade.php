@@ -8,6 +8,7 @@
 </head>
 
 <body>
+@if(Auth::user()->role_id==3)
     <div class="container">
         <div class="row">
             <br>
@@ -25,6 +26,24 @@
             </div>
         </div>
     </div>
+    @elseif(Auth::user()->role_id==1)
+    <div class="container">
+        <div class="row">
+            <br>
+            <div class="col-lg-2" style="background-color: grey; padding:10px;">        
+                <a href="/bookings/create" style="padding:5px; color:white;">Reservar</a>
+                <a href="/activity" style="padding:5px; color:white;">Actividades</a>
+                <a href="/users/{{ Auth::user()->id }}" style="padding:5px; color:white;">Datos usuario</a>
+                <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" style="float:right; color:white;">
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                </form>
+            </div>
+        </div>
+    </div>
+    @endif
     <h1>Actividades</h1>
     <a href="activities/create" class="btn btn-primary float-right">Nuevo actividad</a>
     <br>
@@ -53,7 +72,6 @@
         @endforelse
     </table>
     <br>
-    <a href="sessions/create" class="btn btn-primary float-right">Nuevas sessiones</a>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="/js/ajax.js"></script>
 </body>

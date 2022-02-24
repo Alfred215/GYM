@@ -81,6 +81,6 @@ class RegisterController extends Controller
             'birthday' => $request['birthday'],
             'sex' => $request['sex'],
             'role_id' => 1]);
-            return redirect('/users');
+            return redirect('/');
     }
 }

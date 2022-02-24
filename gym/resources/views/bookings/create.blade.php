@@ -10,6 +10,25 @@
 </head>
 
 <body>
+@if(Auth::user()->role_id==3)
+    <div class="container">
+        <div class="row">
+            <br>
+            <div class="col-lg-2" style="background-color: grey; padding:10px;">        
+                <a href="/users" style="padding:5px; color:white;">Users</a>
+                <a href="/activities" style="padding:5px; color:white;">Actividades</a>
+                <a href="/sessions/create" style="padding:5px; color:white;">Sesiones</a>
+                <a href="/bookings" style="padding:5px; color:white;">Bookings</a>
+                <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" style="float:right; color:white;">
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                </form>
+            </div>
+        </div>
+    </div>
+    @elseif(Auth::user()->role_id==1)
     <div class="container">
         <div class="row">
             <br>
@@ -26,6 +45,7 @@
             </div>
         </div>
     </div>
+    @endif
     <h1>Seleccionar actividad</h1>
     <form action="">
         @csrf
