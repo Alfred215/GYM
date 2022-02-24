@@ -68,26 +68,27 @@ class BookingController extends Controller
     {   
         $session_id=$request->store;
         $user_id= Auth::id();
-        $reservas=Booking::all();
-        $contador=0;
-        foreach($reservas as $reserva){
-            if($reserva->session_id==$session_id){
-                $contador++;
-            }
-        }
-        $nummax=0;
-        $sessions=Sesion::all();
-        foreach($sessions as $session){
-            if($session==$session_id){
-                $nummax=$session->activity_id->nummembers;
-            }
-        }
 
-            $booking= Booking::create([
-            'fecha'=>new Carbon(),
-            'user_id'=>$user_id,
-            'sesion_id'=>$session_id
-            ]);
+        //$reservas=Booking::all();
+        // $contador=0;
+        // foreach($reservas as $reserva){
+        //     if($reserva->session_id==$session_id){
+        //         $contador++;
+        //     }
+        // }
+        // $nummax=0;
+        // $sessions=Sesion::all();
+        // foreach($sessions as $session){
+        //     if($session==$session_id){
+        //         $nummax=$session->activity->nummembers;
+        //     }
+        // }
+
+        $booking= Booking::create([
+        'fecha'=>new Carbon(),
+        'user_id'=>$user_id,
+        'sesion_id'=>$session_id
+        ]);
         
         return $session_id;
     }

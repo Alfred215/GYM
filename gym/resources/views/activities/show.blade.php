@@ -69,8 +69,13 @@
         <li>Fecha: {{$session->date_session}}</li>
         <li>Hora de inicio: {{$session->start_time}}</li>
         <li>Hora de fin: {{$session->end_time}}</li>
-    </ul>    
+        <li>Usuarios:</li>
+        @foreach($session->users as $user)
+        <ul>
+            <li>Nombre: {{$user->name}}</li>
+        </ul>
+        @endforeach 
+    </ul>        
     @endforeach
-    
 </body>
 </html>
