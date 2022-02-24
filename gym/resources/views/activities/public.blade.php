@@ -47,7 +47,7 @@
     <h1>Actividades</h1>
     <br>
     <br>
-    <table border="1">
+    <table class="table table-striped" border="1">
         <tr>
             <th>Nombre</th>
             <th>Descripción</th>
