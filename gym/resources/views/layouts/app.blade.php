@@ -83,7 +83,8 @@
                     <a style="padding:5px; color:white;" href="#" role=" button" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>
-                    <a href="/bookings/create" style="padding:5px; color:white;">Reservar</a>
+                    <a href="/bookings/create" style="padding:5px; color:white;">Reservar por actividad</a>
+                    <a href="/bookings/date" style="padding:5px; color:white;">Reservar por fecha</a>
                     <a href="/activity" style="padding:5px; color:white;">Actividades</a>
                     <a href="/users/{{ Auth::user()->id }}" style="padding:5px; color:white;">Datos usuario</a>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" style="float:right; color:white;">

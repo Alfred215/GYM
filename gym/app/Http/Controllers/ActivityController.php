@@ -58,6 +58,12 @@ class ActivityController extends Controller
 
         $request->validate($rules);
 
+        $activity= Activity::create([
+            'name'=>$request['name'],
+            'descrip'=>$request['descrip'],
+            'duration'=>$request['duration'],
+            'nummembers'=>$request['nummembers']
+        ]);
         return redirect("/activities");
     }
 

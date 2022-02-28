@@ -9,7 +9,8 @@
 
 <body>
     <h1>Reservas</h1>
-    <a href="/bookings/create" class="btn btn-primary float-left">Reservar</a>
+    <a href="/bookings/create" class="btn btn-primary float-left">Reservar por actividad</a>
+    <a href="/bookings/date" class="btn btn-primary float-left">Reservar por fecha</a>
     <br>
     <br>
 

@@ -92,7 +92,7 @@ class SesionController extends Controller
             }
         }
 
-        return redirect('/sessions');
+        return redirect('/activities');
     }
 
     public function up (Request $request, $dateModifi){
